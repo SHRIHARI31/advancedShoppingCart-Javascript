@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  body {
+    @apply flex relative;
+  }
+  .shopping-body {
+    @apply w-[70%] relative h-[100vh] bg-purple-200 font-poppins p-5 max-md:w-[100%] max-md:flex max-md:justify-center max-md:items-center max-md:px-[10%];
+  }
+  .shopping-body .show-cart{
+    @apply fixed bg-purple-400  right-0 text-white text-sm rounded-sm  p-3  bottom-12  shadow-sm shadow-black hidden max-md:block  z-[999]
+  }
+  .shopping-body .product-div {
+    @apply border-none h-[700px] overflow-y-scroll;
+  }
+
+  .product-div {
+    @apply flex gap-2 flex-wrap;
+  }
+  .product-div .product-card {
+    @apply w-fit bg-purple-300 p-5 rounded-md;
+  }
+  .product-div .product-card .product-title {
+    @apply text-center  capitalize font-extrabold text-[25px] py-4;
+  }
+  .product-div .product-card .product-img {
+    @apply rounded-md w-[300px] h-[350px];
+  }
+  .product-div .product-card .product-pricing {
+    @apply mt-2;
+  }
+  .product-div .product-card .product-rating {
+    @apply py-2;
+  }
+  .product-div .product-card .card-button {
+    @apply p-2 w-[40px] h-[40px] active:scale-[1.09];
+    background-image: url("https://www.svgrepo.com/show/452178/cart.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .product-div .product-card .counter-div {
+    @apply flex gap-4 my-2;
+  }
+
+  .product-div .product-card .counter-div > .increment-btn,
+  .decrement-btn {
+    @apply text-2xl text-white bg-black rounded-full p-3 cursor-pointer active:bg-slate-700  active:scale-[1.1];
+  }
+  .product-div .product-card .counter-div > .increment-btn {
+    @apply active:bg-slate-700  active:scale-[1.1];
+  }
+  .product-div .product-card .counter-div .counter {
+    @apply border-2 p-3 rounded-md text-center  text-2xl cursor-pointer;
+  }
+  /* shopping -cart*/
+  .shopping-cart-heading {
+    @apply text-center pt-5 bg-purple-400 flex justify-center;
+  }
+  .shopping-cart-heading > span {
+    @apply border-x-[1px] border-t-[1px] rounded-md p-2 bg-purple-500 border-purple-600 text-2xl text-white font-bold;
+  }
+  .shopping-cart-body {
+    @apply w-[30%] bg-purple-100 p-0  max-lg:w-[100%] max-md:absolute max-md:z-[1] max-md:translate-x-[-100%] ;
+  }
+
+
+  .shopping-cart-body .cart-section {
+    @apply w-full h-[80vh] m-0 bg-purple-300;
+  }
+  .control-section {
+    @apply flex  justify-around p-5 gap-1 bg-purple-200;
+  }
+  .control-section > button {
+    @apply border-[2px]  text-2xl w-[250px] h-[40px] text-white bg-purple-500 border-purple-600  rounded-md;
+  }
+  .cart-section {
+    @apply p-4 flex flex-col gap-4 overflow-y-auto relative;
+  }
+
+  .cart-section .cart-box {
+    @apply px-5 py-3 flex flex-col bg-purple-400 rounded-md capitalize;
+  }
+  .cart-section .cart-box .place-order-box {
+    @apply mt-1 flex justify-around;
+  }
+  .cart-section .cart-box .place-order-box .order-btn {
+    @apply w-[30px] h-[30px];
+    background-image: url("https://www.svgrepo.com/show/474927/ok.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .cart-section .cart-box .place-order-box .remove-btn {
+    @apply w-[30px] h-[30px];
+    background-image: url("https://www.svgrepo.com/show/124212/remove.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
